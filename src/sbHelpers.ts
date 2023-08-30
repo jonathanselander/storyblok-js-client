@@ -115,7 +115,7 @@ export class SbHelpers {
 		const reHasUnescapedHtml = RegExp(reUnescapedHtml.source)
 
 		return string && reHasUnescapedHtml.test(string)
-			? string.replace(reUnescapedHtml, (chr) => htmlEscapes[chr])
+			? string.replace(reUnescapedHtml, (chr) => htmlEscapes[chr] ?? chr)
 			: string
 	}
 }
